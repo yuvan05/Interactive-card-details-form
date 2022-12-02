@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <!--Main-->
+  <section class="main">
+    <div class="secondary-window">
+        <div class="secondary-container">
+            <div class="card-front">
+              <!--card-number-->
+                <img src="./images/card-logo.svg" alt="">
+                <p class="card-front-number">0000 0000 0000 0000</p>
+                <div class="card-front-name-and-date">
+                  <!--Card name-->
+                    <p class="card-front-name">CARDHOLDER NAME</p>
+                    <!--Card-date-->
+                    <div class="card-front-date"><p class="card-front-date-first">00</p><p class="card-front-date-second">/00</p></div>
+                </div>
+            </div>
+            <div class="card-back">
+              <!--cadr-cvc-->
+                <div class="card-back-cvc">000</div>
+            </div>
+        </div>
+    </div>
+    <div class="main-window">
+        <div class="container">
+            <form class="form" novalidate>
+                <div class="cardholder-name">
+                  <!--Card-name-->
+                    <p class="title">CARDHOLDER NAME</p>
+                    <div class="input-container">
+                        <input class="input" name="cardholder-name" id="cardholder-name" minlength="5" maxlength="30" placeholder="e.g. Vladislav Gorovenko" required pattern="\D*">
+                    </div>
+                    <p class="error cardholder-name-error">'</p>
+                </div>
+                <div class="card-number">
+                  <!--Card-number-->
+                    <p class="title">CARD NUMBER</p>
+                    <div class="input-container">
+                        <input class="input" name="card-number" id="card-number" minlength="16" maxlength="19" placeholder="e.g. 1234 1234 1234 1234" required pattern="(\d{4}\s?){3}\d{4}">
+                    </div>
+                    <p class="error card-number-error">'</p>
+                </div>
+                <div class="exp-date-and-cvc">
+                    <div class="exp-date">
+                      <!--EXP-DAtES-->
+                        <p class="title">EXP. DATE (MM/YY)</p>
+                        <div class="exp-date-inputs">
+                            <div class="input-container">
+                                <input class="input" id="exp-date-input-one" name="exp-mm" minlength="2" maxlength="2" placeholder="MM" required pattern="\d{2}">
+                            </div>
+                            <div class="input-container">
+                                <input class="input" id="exp-date-input-two" name="exp-yy" minlength="2" maxlength="2" placeholder="YY" required pattern="\d{2}">
+                            </div>
+                        </div>
+                        <p class="error exp-date-input-one-error exp-date-input-two-error">'</p>
+                    </div>
+                    <div class="cvc">
+                      <!--CVC-->
+                        <p class="title">CVC</p>
+                        <div class="input-container">
+                            <input class="input" id="cvc-input" name="cvc" id="cvc" minlength="3" maxlength="3" placeholder="e.g. 123" type="text" required pattern="\d{3}">  
+                        </div>
+                        <p class="error cvc-input-error">'</p>
+                    </div>
+                </div>
+                <button class="btn submit-btn" type="submit">Confirm</button>
+                <div class="success">
+                  <!--😉-succes-->
+                    <img src="./images/icon-complete.svg" alt="">
+                    <h1>THANK YOU!</h1>
+                    <p>We've added your card details</p>
+                    <button class="btn continue-btn">Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<script src="./app.js"></script>
+  
+
+</body>
+</html>
